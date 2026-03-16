@@ -107,9 +107,9 @@ export default function App() {
 
   const initChat = () => {
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       chatSessionRef.current = ai.chats.create({
-        model: 'gemini-3.1-pro-preview',
+        model: 'gemini-2.0-flash',
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
           temperature: 0.7,
